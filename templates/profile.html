@@ -3,14 +3,22 @@
 {% block title %} CWM-TU Dumpyard {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/profiles.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock style %}
 
 {% block rest %}
 <div class="rest">
     <div class="left">
         <div class="up">
-            <h2>Profile</h2>
+            <div class="pics">
+                <h2>Profile</h2>
+                {% if ew.full_name.0 < 'F' %} <img src="{% static 'images/fox.png' %}" class="img1">
+                    {% elif ew.full_name.0 < 'L' %} <img src="{% static 'images/lion.png' %}" class="img1">
+                        {% elif ew.full_name.0 < 'R' %} <img src="{% static 'images/penguin.png' %}" class="img1">
+                            {% else %}
+                            <img src="{% static 'images/owl.png' %}" class="img1">
+                            {% endif %}
+            </div>
             <div class="here">
                 <div class="there">Name</div>
                 <div>{{ew.full_name}}</div>
@@ -30,8 +38,6 @@
         </div>
         <div class="down">
             <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
-            <button class="buttoned">Edit</button>
-            <button class="buttoned">Delete</button>
         </div>
     </div>
     <div class="left1">

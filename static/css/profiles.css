@@ -64,7 +64,6 @@
     display: flex;
     flex-direction: row;
     color: aliceblue;
-    justify-content:space-between;
     padding: 10px;
 }
 
