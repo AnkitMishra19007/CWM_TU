@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+* {
+    background-color: #141D11;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.full {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px;
+    background-color: #1c2918;
+    border-bottom: tomato;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.five {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-color: rgb(92, 30, 30);
+    margin-right: 10px;
+}
+
+.logo {
+    height: 80px;
+    width: 200px;
+    align-self:center;
+    border-color: tomato;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.button {
+    font-family: 'Quicksand', sans-serif;
+    color: rgba(253, 226, 204, 0.932);
+    font-size: 18px;
+    background-color: #141D11;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding: 6px 16px;
+    border-width: 2px;
+    border-color: tomato;
+    border-radius: 5%;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: tomato;
+    color: honeydew;
+}
+
+a {
+    font-size: 19px;
+    color: rgb(240, 145, 128);
+}
+
+.rest {
+
+    display: flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-color: rgb(196, 65, 32);
+    border-style: solid;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.col-sm-6 {
+    color: rgb(241, 233, 114);
+}
+
+.btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 19px;
+    background-color: rgb(30, 122, 18);
+    color: rgb(255, 255, 255);
+}
+
+.btn:hover {
+    /* padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px; */
+    background-color: rgb(184, 37, 0);
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    color:chartreuse;
+    font-size: 20px;
+}
+
+.bg {
+    background-color: #141D11;
+    color: rgb(235, 155, 50);
+    font-size: 20px;
+    border-style: solid;
+    border-color: rgb(238, 77, 65);
+    border-width: 1px;
+    border-radius: 3px;
+}

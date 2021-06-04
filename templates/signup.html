@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU SignUp {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    <div class="this">
+        <h3>SIGN UP</h3>
+    </div>
+    <div class="forms">
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            <div class="inners">
+                {% for form in form %}
+                <div class="double">
+                    {{form.label_tag}} <div class="err"> {{form.errors|striptags}} </div> {{form}}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="btns">
+                <input type="submit" class="btn" value="Sign up">
+            </div>
+
+        </form>
+    </div>>
+
+</div>
+{% endblock rest %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU Dumpyard {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    {% csrf_token %}
+    {% if ew %}
+    <h1>Hey {{ew}}</h1>
+    {% endif %}
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+
+{% endblock rest %}

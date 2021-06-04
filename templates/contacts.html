@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU Contact{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    <div class="this">
+        <h3>CONTACT US</h3>
+    </div>
+    <div class="first">
+        <div class="text">
+            For any suggestions feel free to write at
+        </div>
+        <div class="text1">
+            cwm-tu-suggestions@gmail.com
+        </div>
+    </div>
+    <div class="first">
+        <div class="text">
+            To report or complaint send us mail to
+        </div>
+        <div class="text1">
+            cwm-tu-complaints@gmail.com
+        </div>
+    </div>
+    <div class="first">
+        <div class="text">
+            For any query write us to
+        </div>
+        <div class="text1">
+            cwm-tu-queries@gmail.com
+        </div>
+    </div>
+    <div class="last">
+        © this site is developed by CSB18046
+    </div>
+</div>
+{% endblock rest %}

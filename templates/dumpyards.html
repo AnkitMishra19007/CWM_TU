@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU Dumpyard {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/dumpyard.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    <div class="this">
+        <h3>DUMPYARDS</h3>
+    </div>
+    <div class="dump">
+        <div class="dum-img">
+            <img src="{% static 'images/dump.jpg' %}">
+        </div>
+        <div class="dump-text">
+            Currently there are 6 active dumpyards inside the university <u>(marked with Orange)</u>
+        </div>
+    </div>
+</div>
+
+{% endblock rest %}

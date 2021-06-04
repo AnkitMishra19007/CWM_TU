@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU Login{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    <div class="this">
+        <h3>LOG IN</h3>
+    </div>
+    <div class="forms">
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            <div class="inners">
+                <div class="err">
+                    {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                    {{error}}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                {% for form in form %}
+                {{form.label_tag}} <div class="err"> {{form.errors|striptags}} </div> {{form}} <br>
+                {% endfor %}
+            </div>
+
+            <div class="btns">
+                <input type="submit" class="btn" value="Log in">
+            </div>
+            <div class="below">
+                <div>Don't have an account?</div>
+                <div class="link"> <a href="/logwaste/signup">Signup here</a> </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+{% endblock rest %}
