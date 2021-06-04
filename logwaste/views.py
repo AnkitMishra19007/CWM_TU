@@ -62,7 +62,7 @@ def signup(request):
 
 def profile(request):
     if request.user.is_authenticated:
-        ew = request.user.get_username
+        ew = request.user
         return render(request, 'profile.html', {'ew': ew})
     else:
         return HttpResponseRedirect('/logwaste/logins/')

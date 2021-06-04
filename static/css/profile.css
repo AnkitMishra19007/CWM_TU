@@ -68,6 +68,27 @@ a {
 
 .rest {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     color: aliceblue;
+    justify-content:space-between;
+    padding: 20px;
+    margin: 5%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    border-style:solid;
+    border-color:tomato;
+    border-width:1px;
+}
+
+.up {
+    display: flex;
+    flex-direction: column;
+}
+
+.down {
+display: flex;
+flex-direction: row;
 }

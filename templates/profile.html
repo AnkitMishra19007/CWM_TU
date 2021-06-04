@@ -8,11 +8,25 @@
 
 {% block rest %}
 <div class="rest">
-    {% csrf_token %}
-    {% if ew %}
-    <h1>Hey {{ew}}</h1>
-    {% endif %}
-    <a href="{% url 'logout' %}">Logout</a>
+    <div class="left">
+        <div class="up">
+            <h2>Details</h2>
+            <h2>ew.email</h2>
+            <h2>ew.mobile</h2>
+        </div>
+        <div class="down">
+            <button><a href="{% url 'logout' %}">Logout</a></button>
+            <button>Edit</button>
+        </div>
+    </div>
+    <div class="left">
+        <div class="up">
+            <h2>Bills</h2>
+            <h2>Have you?</h2>
+            <h2>or not</h2>
+        </div>
+    </div>
+
 </div>
 
 {% endblock rest %}
