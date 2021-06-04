@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+* {
+    background-color: #141D11;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.full {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px;
+    background-color: #1c2918;
+    border-bottom: tomato;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.five {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-color: rgb(92, 30, 30);
+    margin-right: 10px;
+}
+
+.logo {
+    height: 80px;
+    width: 200px;
+    align-self:center;
+    border-color: tomato;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.button {
+    font-family: 'Quicksand', sans-serif;
+    color: rgba(253, 226, 204, 0.932);
+    font-size: 18px;
+    background-color: #141D11;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding: 6px 16px;
+    border-width: 2px;
+    border-color: tomato;
+    border-radius: 5%;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: tomato;
+    color: honeydew;
+}
+.rest {
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+    justify-content:space-between;
+    padding: 10px;
+}
+
+.left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-style:solid;
+    border-color:tomato;
+    border-width:1px;
+    padding: 20px;
+    margin: 5px;
+}
+
+.left1 {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    border-style:solid;
+    border-color:tomato;
+    border-width:1px;
+    padding: 30px;
+    margin: 5px;
+}
+
+.up {
+    display: flex;
+    flex-direction: column;
+}
+
+.down {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+.here {
+    font-family: 'Quicksand', sans-serif;
+    border-bottom-color: rgb(192, 128, 67);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    color: rgb(252, 238, 176);
+}
+
+.there {
+    font-family: 'Quicksand', sans-serif;
+    color:rgb(215, 241, 169);
+}
+
+h2 {
+    color:#77c023;
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.buttoned {
+    font-family: 'Quicksand', sans-serif;
+    color: rgba(253, 226, 204, 0.932);
+    font-size: 16px;
+    background-color: rgb(30, 122, 18);
+    padding: 4px 16px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: rgb(30, 122, 18);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.buttoned:hover {
+    background-color: rgb(184, 37, 0);
+    color: honeydew;
+    border-color: rgb(184, 37, 0);
+}

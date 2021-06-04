@@ -3,23 +3,38 @@
 {% block title %} CWM-TU Dumpyard {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/profiles.css' %}">
 {% endblock style %}
 
 {% block rest %}
 <div class="rest">
     <div class="left">
         <div class="up">
-            <h2>Details</h2>
-            <h2>ew.email</h2>
-            <h2>ew.mobile</h2>
+            <h2>Profile</h2>
+            <div class="here">
+                <div class="there">Name</div>
+                <div>{{ew.full_name}}</div>
+            </div>
+            <div class="here">
+                <div class="there">Email</div>
+                <div>{{ew.email}}</div>
+            </div>
+            <div class="here">
+                <div class="there">Mobile</div>
+                <div>{{ew.mobile}}</div>
+            </div>
+            <div class="here">
+                <div class="there">Address</div>
+                <div>{{ew.address}}</div>
+            </div>
         </div>
         <div class="down">
-            <button><a href="{% url 'logout' %}">Logout</a></button>
-            <button>Edit</button>
+            <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
+            <button class="buttoned">Edit</button>
+            <button class="buttoned">Delete</button>
         </div>
     </div>
-    <div class="left">
+    <div class="left1">
         <div class="up">
             <h2>Bills</h2>
             <h2>Have you?</h2>
