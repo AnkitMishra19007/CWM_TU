@@ -21,19 +21,19 @@
             </div>
             <div class="here">
                 <div class="there">Name</div>
-                <div>{{ew.full_name}}</div>
+                <div class="fetch">{{ew.full_name}}</div>
             </div>
             <div class="here">
                 <div class="there">Email</div>
-                <div>{{ew.email}}</div>
+                <div class="fetch">{{ew.email}}</div>
             </div>
             <div class="here">
                 <div class="there">Mobile</div>
-                <div>{{ew.mobile}}</div>
+                <div class="fetch">{{ew.mobile}}</div>
             </div>
             <div class="here">
                 <div class="there">Address</div>
-                <div>{{ew.address}}</div>
+                <div class="fetch">{{ew.address}}</div>
             </div>
         </div>
         <div class="down">
@@ -41,11 +41,31 @@
         </div>
     </div>
     <div class="left1">
-        <div class="up">
-            <h2>Bills</h2>
-            <h2>Have you?</h2>
-            <h2>or not</h2>
+        <h2 class="hh">Monthly Bill Payment</h2>
+        <div class="oranges">
+            <form action="">
+                <div class="some">
+                    <div class="it">
+                        <h5>Month</h5>
+                        <input type="month" id="month" name="month" class="bg"><br>
+                    </div>
+                    <div class="it">
+                        <h5>Amount (₹)</h5>
+                        <input type="text" id="amount" name="amount" class="bg"><br>
+                    </div>
+                    <div class="keep">
+                        <input type="submit" value="Pay" class="buttoned">
+                    </div>
+
+                </div>
+            </form>
         </div>
+
+
+
+    </div>
+    <div class="left2">
+        <h2 class="hh1">Past Payments</h2>
     </div>
 
 </div>

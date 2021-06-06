@@ -7,11 +7,11 @@ from .models import Ewaste, MyUser
 @admin.register(Ewaste)
 class EwasteAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'mobile', 'address',
-                    'item_name', 'item_description', 'item_image']
+                    'item_name', 'item_description', 'item_image', 'date']
 
 
 class MyUserAdmin(BaseUserAdmin):
-    list_display = ['full_name', 'email', 'date_joined',
+    list_display = ['id', 'full_name', 'email', 'date_joined',
                     'last_login', 'is_admin', 'is_active']
     search_fields = ['email', 'full_name']
     readonly_fields = ['date_joined', 'last_login']

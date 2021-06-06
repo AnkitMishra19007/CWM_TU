@@ -77,3 +77,4 @@ class Ewaste(models.Model):
     item_name = models.CharField(max_length=30)
     item_description = models.CharField(max_length=100)
     item_image = models.ImageField(upload_to='media')
+    date = models.DateTimeField()

@@ -3,29 +3,36 @@ from django.shortcuts import render, HttpResponseRedirect
 from .forms import SignupForm, Ewastes, RFPAuthForm
 from .models import Ewaste
 from django.contrib.auth import authenticate, login, logout
+import datetime
 # Create your views here.
 
 
 def ewastes(request):
-
-    if request.method == 'POST':
-        form = Ewastes(request.POST, request.FILES)
-        print(form.errors)
-        if form.is_valid():
-            nm = form.cleaned_data['name']
-            em = form.cleaned_data['email']
-            mo = form.cleaned_data['mobile']
-            it = form.cleaned_data['item_name']
-            id = form.cleaned_data['item_description']
-            ii = form.cleaned_data['item_image']
-            print(nm, em, mo)
-            reg = Ewaste(name=nm, email=em, mobile=mo,
-                         item_name=it, item_description=id, item_image=ii)
-            reg.save()
-            form = Ewastes()
+    if request.user.is_superuser:
+        data = Ewaste.objects.all()
+        print(data.values)
+        return render(request, 'ewastes.html', {'data': data})
     else:
-        form = Ewastes()
-    return render(request, 'ewastes.html', {'form': form})
+        if request.method == 'POST':
+            form = Ewastes(request.POST, request.FILES)
+            print(form.errors)
+            if form.is_valid():
+                a = datetime.date.today()
+                nm = form.cleaned_data['name']
+                em = form.cleaned_data['email']
+                mo = form.cleaned_data['mobile']
+                ad = form.cleaned_data['address']
+                it = form.cleaned_data['item_name']
+                id = form.cleaned_data['item_description']
+                ii = form.cleaned_data['item_image']
+                print(nm, em, mo)
+                reg = Ewaste(name=nm, email=em, mobile=mo, address=ad,
+                             item_name=it, item_description=id, item_image=ii, date=a)
+                reg.save()
+                form = Ewastes()
+        else:
+            form = Ewastes()
+        return render(request, 'ewastes.html', {'form': form})
 
 
 def logins(request):

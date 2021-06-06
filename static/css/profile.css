@@ -44,15 +44,15 @@
 .button {
     font-family: 'Quicksand', sans-serif;
     color: rgba(253, 226, 204, 0.932);
-    font-size: 18px;
+    font-size: 16px;
     background-color: #141D11;
     margin-right: 2px;
     margin-left: 2px;
-    padding: 6px 16px;
+    padding: 4px 16px;
     border-width: 2px;
     border-color: tomato;
     border-radius: 5%;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     cursor: pointer;
 }
 
@@ -73,41 +73,79 @@
     flex: 1;
     flex-direction: column;
     border-style:solid;
-    border-color:tomato;
-    border-width:1px;
+    border-width:3px;
+    border-color: rgb(68, 80, 80);
     padding: 20px;
     margin: 5px;
     border-radius: 4px;
+    background-color: rgb(39, 18, 4);
 }
 
 .left1 {
     display: flex;
-    flex: 2;
+    flex: 1;
     flex-direction: column;
     border-style:solid;
-    border-color:tomato;
-    border-width:1px;
-    padding: 30px;
+    border-color: rgb(68, 80, 80);
+    border-width:3px;
+    padding: 20px;
     margin: 5px;
     border-radius: 4px;
+    background-color: rgb(39, 31, 4);
+}
+
+.left2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border-style:solid;
+    border-color: rgb(68, 80, 80);
+    border-width:3px;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 4px;
+    background-color: rgb(2, 26, 21);
 }
 
 .up {
     display: flex;
     flex-direction: column;
+    background-color: rgb(39, 18, 4);
+}
+
+.some {
+    display: flex;
+    flex-direction: column;
+    margin-top:50px;
+    padding: 10px;
+    margin-top: 35px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(250, 83, 53);
+    border-radius: 3px;
+    background-color: rgb(39, 31, 4);
+}
+
+.it {
+
+    align-self: center;
+    padding: 15px;
+    background-color: rgb(39, 31, 4);
 }
 
 .down {
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content:center;
+background-color: rgb(39, 18, 4);
+margin-top: 20px;
 }
 
 .here {
     font-family: 'Quicksand', sans-serif;
     border-bottom-color: rgb(192, 128, 67);
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style:solid;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -116,23 +154,66 @@ justify-content: space-around;
     padding: 5px;
     font-size: 16px;
     color: rgb(252, 238, 176);
+    background-color: rgb(39, 18, 4);
 }
 
 .pics {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: rgb(39, 18, 4);
 }
 
 .there {
     font-family: 'Quicksand', sans-serif;
     color:rgb(215, 241, 169);
+    background-color: rgb(39, 18, 4);
+}
+
+.fetch {
+    background-color: rgb(39, 18, 4);
 }
 
 h2 {
     color:#77c023;
-    font-size: 30px;
+    font-size: 28px;
     font-family: 'Quicksand', sans-serif;
+    background-color: rgb(39, 18, 4);
+}
+
+.hh {
+    color:#77c023;
+    font-size: 28px;
+    font-family: 'Quicksand', sans-serif;
+    align-self: center;
+    background-color: rgb(39, 31, 4);
+}
+
+.hh1 {
+    color:#77c023;
+    font-size: 28px;
+    font-family: 'Quicksand', sans-serif;
+    align-self: center;
+    background-color: rgb(2, 26, 21);
+}
+
+h5 {
+    align-self: center;
+    font-family: 'Quicksand', sans-serif;
+    color:#c4ec96;
+    font-size: 20px;
+    background-color: rgb(39, 31, 4);
+}
+
+.oranges {
+    background-color: rgb(39, 31, 4);
+}
+
+.keep {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: rgb(39, 31, 4);
 }
 
 .buttoned {
@@ -146,7 +227,7 @@ h2 {
     border-color: rgb(30, 122, 18);
     transition-duration: 0.3s;
     cursor: pointer;
-    margin-top: 20px;
+    align-self: center;
 }
 
 .buttoned:hover {
@@ -161,4 +242,16 @@ h2 {
     border-width:3px;
     border-radius: 8px;
     padding: 1px;
+}
+
+.bg {
+    background-color: #141D11;
+    color: rgb(235, 155, 50);
+    font-size: 20px;
+    border-style: solid;
+    border-color: rgb(238, 77, 65);
+    border-width: 1px;
+    border-radius: 3px;
+    font-family: 'Quicksand', sans-serif;
+    width:250px;
 }

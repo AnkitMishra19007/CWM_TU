@@ -8,6 +8,23 @@
 
 {% block rest %}
 <div class="rest">
+    {% if request.user.is_superuser %}
+    <div class="this">
+        <h3>E-WASTE REQUESTS</h3>
+    </div>
+    <table>
+        <th>Name</th>
+        <th>Item</th>
+        <th>Photo</th>
+        {% for data in data %}
+        <tr>
+            <td>{{data.name}}</td>
+            <td>{{data.item_name}}</td>
+            <td><img src="/media/{{data.item_image}}/" class="less"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
     <div class="this">
         <h3>E-WASTE PICKUP REQUEST FORM</h3>
     </div>
@@ -27,6 +44,7 @@
 
         </form>
     </div>>
+    {% endif %}
 
 </div>
 {% endblock rest %}

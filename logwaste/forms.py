@@ -36,7 +36,8 @@ class SignupForm(UserCreationForm):
 class Ewastes(forms.ModelForm):
     class Meta:
         model = Ewaste
-        fields = '__all__'
+        fields = ['name', 'email', 'mobile', 'address',
+                  'item_name', 'item_description', 'item_image']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'bg'}),
             'email': forms.EmailInput(attrs={'class': 'bg'}),
