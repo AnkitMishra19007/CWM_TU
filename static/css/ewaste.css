@@ -9,7 +9,7 @@
 .full {
     display: flex;
     flex-direction: column;
-
+    
 }
 
 .navbar {
@@ -17,10 +17,14 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-color: #1c2918;
-    border-bottom: tomato;
-    border-width: 1px;
+    background-image: linear-gradient(to bottom right, rgb(5, 61, 38) , rgb(6,8,9));
     border-style: solid;
+}
+
+.logo {
+    height: 70px;
+    width: 180px;
+    align-self:center;
 }
 
 .five {
@@ -31,14 +35,6 @@
     margin-right: 10px;
 }
 
-.logo {
-    height: 80px;
-    width: 200px;
-    align-self:center;
-    border-color: tomato;
-    border-width: 1px;
-    border-style: solid;
-}
 
 .button {
     font-family: 'Quicksand', sans-serif;
@@ -68,10 +64,9 @@ a {
 .rest {
     display: flex;
     flex-direction: column;
-    padding: 10px;
     margin-top: 2%;
-    margin-left: 33%;
-    margin-right: 33%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .below {
@@ -98,16 +93,22 @@ a {
     
 }
 
+.less {
+    width: 15%;
+    height:60px;
+}
+
 .inners {
     display: flex;
     flex-direction: column;
 }
 
 .btns {
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 23%;
+    margin-right: 23%;
     display: flex;
     flex-direction: column;
+    margin-top: 8%;
 }
 
 .btn {
@@ -115,6 +116,12 @@ a {
     background-color: rgb(30, 122, 18);
     color: rgb(255, 255, 255);
     font-size: 18px;
+}
+
+.double {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn:hover {
@@ -138,6 +145,10 @@ h3{
     border-color: rgb(238, 77, 65);
     border-width: 1px;
     border-radius: 3px;
+}
+
+.bgi {
+    color: rgb(235, 155, 50);
 }
 
 .err {

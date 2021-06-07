@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
@@ -18,7 +19,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-color: #0c191c;
+    background-image: linear-gradient(to bottom right, rgb(5, 61, 38) , rgb(6,8,9));
     border-style: solid;
 }
 
@@ -26,15 +27,6 @@
     height: 70px;
     width: 180px;
     align-self:center;
-}
-
-.rest {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
-    border-color: rgb(177, 168, 117);
-    border-width: 0.4px;
-    border-style: double;
 }
 
 .five {
@@ -66,30 +58,68 @@
     color: honeydew;
 }
 
-img {
-    width: 100%;
-    height: 33rem;
-}
-
-.container {
-    position: absolute;
-    font-family: 'Quicksand', sans-serif;
-    bottom: 0;
-    right:0;
-    padding-bottom: 50px;
-}
-
-h5 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 25px;
-    color: tomato;
-}
-
-p {
-    font-family: 'Quicksand', sans-serif;
-}
-
 a {
     font-size: 19px;
     color: rgb(240, 145, 128);
+}
+
+.rest {
+    display: flex;
+    flex-direction: column;
+}
+
+.rest1 {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    color: rgb(187, 243, 224);
+    padding: 20px;
+    margin-top: 1%;
+    justify-content: space-between;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    border-color: rgb(255, 71, 71);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: #1a2918;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: tomato;
+}
+
+.imgs {
+    align-self: center;
+}
+
+.text {
+    color: rgb(208, 255, 190);
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 10px;
+    background-color: #1a2918;
+}
+
+.this {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color:#77c023;
+    font-size: 30px;
+
 }

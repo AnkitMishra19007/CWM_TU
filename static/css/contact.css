@@ -1,15 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 * {
     background-color: #141D11;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .full {
     display: flex;
     flex-direction: column;
-    
 }
 
 .navbar {
@@ -17,7 +18,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-color: #0c191c;
+    background-image: linear-gradient(to bottom right, rgb(5, 61, 38) , rgb(6,8,9));
     border-style: solid;
 }
 
@@ -26,7 +27,6 @@
     width: 180px;
     align-self:center;
 }
-
 .five {
     display: flex;
     flex-direction: row;
@@ -55,96 +55,63 @@
     color: honeydew;
 }
 
-a {
-    font-size: 19px;
-    color: rgb(211, 170, 34);
+img {
+    width: 85rem;
+    height: 33rem;
+}
+
+.container {
+    position: absolute;
+    font-family: 'Quicksand', sans-serif;
+    bottom: 0;
+    right:0;
+    padding-bottom: 50px;
 }
 
 .rest {
     display: flex;
     flex-direction: column;
-    margin-top: 2%;
-    margin-left: 30%;
-    margin-right: 30%;
+    border-radius: 3px;
+    border-color: rgb(170, 51, 29);
+    border-style: solid;
+    padding: 10px;
+    margin-top: 7%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
-.below {
+.first {
     display: flex;
     flex-direction: row;
-    margin-top: 15%;
-    padding-top: 10px;
-    color: tomato;
-    justify-content: space-between;
-    font-size: 22px;
-}
-
-.forms {
-    display: flex;
-    flex-direction: column;
-    border-color: rgb(238, 77, 65);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    color:#c4ec96;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    padding: 20px;
-    
-}
-
-.inners {
-    display: flex;
-    flex-direction: column;
-}
-
-.btns {
-    margin-left: 25%;
-    margin-right: 25%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 8%;
-}
-
-.btn {
-    font-family: 'Quicksand', sans-serif;
-    background-color: rgb(30, 122, 18);
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-}
-
-.double {
-    margin: 8px;
-    display: flex;
-    flex-direction: column;
-}
-
-.btn:hover {
-    background-color: rgb(184, 37, 0);
-    color: honeydew;
-}
-
-
-h3{
-    align-self: center;
-    font-family: 'Quicksand', sans-serif;
-    color: tomato;
-    font-size: 23px;
-}
-
-.bg {
-    background-color: #141D11;
-    color: rgb(235, 155, 50);
-    font-size: 20px;
-    border-style: solid;
-    border-color: rgb(238, 77, 65);
-    border-width: 1px;
     border-radius: 3px;
+    border-color: rgb(170, 29, 36);
+    border-style: solid;
+    padding: 10px;
+    margin: 19px;
+    background-color: rgb(56, 48, 20);
+    justify-content: space-between;
 }
 
-.err {
-    color: rgb(255, 220, 24);
-    font-size: 12px;
+.text {
+    color: rgb(252, 238, 176);
+    font-size: 20px;
+    background-color: rgb(56, 48, 20);
     font-family: 'Quicksand', sans-serif;
+}
+
+.text1 {
+    color: rgb(103, 233, 86);
+    font-size: 20px;
+    background-color: rgb(56, 48, 20);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.last {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    align-self:center;
+    color: rgb(191, 195, 216);
+    margin-top: 29px;
 }
 
 .this {

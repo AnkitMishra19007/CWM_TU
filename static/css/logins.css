@@ -4,14 +4,12 @@
 
 * {
     background-color: #141D11;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 .full {
     display: flex;
     flex-direction: column;
+
 }
 
 .navbar {
@@ -19,7 +17,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-color: #0c191c;
+    background-image: linear-gradient(to bottom right, rgb(5, 61, 38) , rgb(6,8,9));
     border-style: solid;
 }
 
@@ -38,18 +36,19 @@
 }
 
 
+
 .button {
     font-family: 'Quicksand', sans-serif;
     color: rgba(253, 226, 204, 0.932);
-    font-size: 18px;
+    font-size: 16px;
     background-color: #141D11;
     margin-right: 2px;
     margin-left: 2px;
-    padding: 6px 16px;
+    padding: 4px 16px;
     border-width: 2px;
     border-color: tomato;
     border-radius: 5%;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     cursor: pointer;
 }
 
@@ -60,56 +59,88 @@
 
 a {
     font-size: 19px;
-    color: rgb(240, 145, 128);
+    color: rgb(211, 170, 34);
 }
 
 .rest {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    margin-top: 2%;
+    margin-left: 33%;
+    margin-right: 33%;
 }
 
-.rest1 {
+.below {
     display: flex;
     flex-direction: row;
-    font-size: 20px;
-    color: rgb(187, 243, 224);
-    padding: 20px;
-    margin-top: 1%;
+    margin-top: 15%;
+    padding-top: 10px;
+    color: tomato;
     justify-content: space-between;
+    font-size: 22px;
 }
 
-.first {
+.forms {
     display: flex;
     flex-direction: column;
-    border-color: rgb(255, 71, 71);
-    border-width: 2px;
+    border-color: rgb(238, 77, 65);
     border-style: solid;
+    border-width: 1px;
     border-radius: 5px;
-    padding: 10px;
-    margin-left: 2%;
-    margin-right: 2%;
-    background-color: #1a2918;
-}
-
-img {
-    width: 300px;
-    height: 300px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: tomato;
-}
-
-.imgs {
-    align-self: center;
-}
-
-.text {
-    color: rgb(208, 255, 190);
-    font-size: 16px;
+    color:#c4ec96;
     font-family: 'Quicksand', sans-serif;
-    margin-top: 10px;
-    background-color: #1a2918;
+    font-size: 18px;
+    padding: 20px;
+    
+}
+
+.inners {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(30, 122, 18);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: rgb(184, 37, 0);
+    color: honeydew;
+}
+
+
+h3{
+    align-self: center;
+    font-family: 'Quicksand', sans-serif;
+    color: tomato;
+    font-size: 23px;
+}
+
+.bg {
+    background-color: #141D11;
+    color: rgb(235, 155, 50);
+    font-size: 20px;
+    border-style: solid;
+    border-color: rgb(238, 77, 65);
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.err {
+    color: rgb(255, 220, 24);
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .this {
