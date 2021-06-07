@@ -45,14 +45,14 @@
     margin-left: 2px;
     padding: 4px 16px;
     border-width: 2px;
-    border-color: tomato;
+    border-color: rgb(151, 124, 3);
     border-radius: 5%;
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: tomato;
+    background-color: rgb(119, 98, 2);
     color: honeydew;
 }
 
@@ -82,7 +82,7 @@ a {
 .forms {
     display: flex;
     flex-direction: column;
-    border-color: rgb(238, 77, 65);
+    border-color: rgb(151, 124, 3);
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
@@ -142,7 +142,7 @@ h3{
     color: rgb(235, 155, 50);
     font-size: 20px;
     border-style: solid;
-    border-color: rgb(238, 77, 65);
+    border-color: rgb(151, 124, 3);
     border-width: 1px;
     border-radius: 3px;
 }

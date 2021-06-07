@@ -44,14 +44,14 @@
     margin-left: 2px;
     padding: 4px 16px;
     border-width: 2px;
-    border-color: tomato;
+    border-color: rgb(151, 124, 3);
     border-radius: 5%;
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: tomato;
+    background-color: rgb(119, 98, 2);
     color: honeydew;
 }
 
