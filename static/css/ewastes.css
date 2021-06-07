@@ -17,10 +17,14 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-color: #1c2918;
-    border-bottom: tomato;
-    border-width: 1px;
+    background-color: #0c191c;
     border-style: solid;
+}
+
+.logo {
+    height: 70px;
+    width: 180px;
+    align-self:center;
 }
 
 .five {
@@ -31,14 +35,6 @@
     margin-right: 10px;
 }
 
-.logo {
-    height: 80px;
-    width: 200px;
-    align-self:center;
-    border-color: tomato;
-    border-width: 1px;
-    border-style: solid;
-}
 
 .button {
     font-family: 'Quicksand', sans-serif;
