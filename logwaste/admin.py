@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import Ewaste, MyUser
+from .models import MyUser, Bills, Ewaste
 # Register your models here.
 
 
@@ -8,6 +8,11 @@ from .models import Ewaste, MyUser
 class EwasteAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'mobile', 'address',
                     'item_name', 'item_description', 'item_image', 'date']
+
+
+@admin.register(Bills)
+class BillAdmin(admin.ModelAdmin):
+    list_display = ['id', 'bill_id', 'bill_amount', 'bill_month', 'bill_date']
 
 
 class MyUserAdmin(BaseUserAdmin):

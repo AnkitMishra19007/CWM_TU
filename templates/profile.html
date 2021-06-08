@@ -3,11 +3,58 @@
 {% block title %} CWM-TU Dumpyard {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/profiles.css' %}">
 {% endblock style %}
 
 {% block rest %}
 <div class="rest">
+    {% if request.user.is_superuser %}
+    <div class="left">
+        <div class="up">
+            <div class="pics">
+                <h2>Profile</h2>
+                <img src="{% static 'images/fox.png' %}" class="img1">
+            </div>
+            <div class="here">
+                <div class="there">Name</div>
+                <div class="fetch">{{ew.full_name}}</div>
+            </div>
+            <div class="here">
+                <div class="there">Email</div>
+                <div class="fetch">{{ew.email}}</div>
+            </div>
+            <div class="here">
+                <div class="there">Mobile</div>
+                <div class="fetch">{{ew.mobile}}</div>
+            </div>
+            <div class="here">
+                <div class="there">Address</div>
+                <div class="fetch">{{ew.address}}</div>
+            </div>
+        </div>
+        <div class="down">
+            <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
+        </div>
+    </div>
+
+    <div class="left2">
+        <h2 class="hh1">Payments Received</h2>
+        <table>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Month</th>
+            <th>Paid On</th>
+            <tr>
+                {% for data in data %}
+                <td>{{data.bill_id}}</td>
+                <td>{{data.bill_amount}}</td>
+                <td>{{data.bill_month}}</td>
+                <td>{{data.bill_date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
     <div class="left">
         <div class="up">
             <div class="pics">
@@ -43,7 +90,8 @@
     <div class="left1">
         <h2 class="hh">Monthly Bill Payment</h2>
         <div class="oranges">
-            <form action="">
+            <form action="" method="POST">
+                {% csrf_token %}
                 <div class="some">
                     <div class="it">
                         <h5>Month</h5>
@@ -66,8 +114,20 @@
     </div>
     <div class="left2">
         <h2 class="hh1">Past Payments</h2>
+        <table>
+            <th>Amount</th>
+            <th>Month</th>
+            <th>Paid On</th>
+            <tr>
+                {% for data in data %}
+                <td>{{data.bill_amount}}</td>
+                <td>{{data.bill_month}}</td>
+                <td>{{data.bill_date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
-
+    {% endif %}
 </div>
 
 {% endblock rest %}

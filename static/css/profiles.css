@@ -61,41 +61,16 @@
     color: aliceblue;
     padding: 10px;
     margin-top: 3%;
+    
 }
 
-.left {
+.left, .left1, .left2 {
     display: flex;
     flex: 1;
     flex-direction: column;
     border-style:solid;
     border-width:3px;
     border-color: rgb(68, 80, 80);
-    padding: 20px;
-    margin: 5px;
-    border-radius: 4px;
-    background-color: rgb(39, 18, 4);
-}
-
-.left1 {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    border-style:solid;
-    border-color: rgb(68, 80, 80);
-    border-width:3px;
-    padding: 20px;
-    margin: 5px;
-    border-radius: 4px;
-    background-color: rgb(39, 31, 4);
-}
-
-.left2 {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    border-style:solid;
-    border-color: rgb(68, 80, 80);
-    border-width:3px;
     padding: 20px;
     margin: 5px;
     border-radius: 4px;
@@ -105,7 +80,7 @@
 .up {
     display: flex;
     flex-direction: column;
-    background-color: rgb(39, 18, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .some {
@@ -118,21 +93,21 @@
     border-style: solid;
     border-color: rgb(250, 83, 53);
     border-radius: 3px;
-    background-color: rgb(39, 31, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .it {
 
     align-self: center;
     padding: 15px;
-    background-color: rgb(39, 31, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .down {
 display: flex;
 flex-direction: row;
 justify-content:center;
-background-color: rgb(39, 18, 4);
+background-color: rgb(2, 26, 21);
 margin-top: 20px;
 }
 
@@ -149,31 +124,31 @@ margin-top: 20px;
     padding: 5px;
     font-size: 16px;
     color: rgb(252, 238, 176);
-    background-color: rgb(39, 18, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .pics {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(39, 18, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .there {
     font-family: 'Quicksand', sans-serif;
     color:rgb(215, 241, 169);
-    background-color: rgb(39, 18, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .fetch {
-    background-color: rgb(39, 18, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 h2 {
     color:#77c023;
     font-size: 28px;
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(39, 18, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .hh {
@@ -181,7 +156,7 @@ h2 {
     font-size: 28px;
     font-family: 'Quicksand', sans-serif;
     align-self: center;
-    background-color: rgb(39, 31, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .hh1 {
@@ -197,18 +172,26 @@ h5 {
     font-family: 'Quicksand', sans-serif;
     color:#c4ec96;
     font-size: 20px;
-    background-color: rgb(39, 31, 4);
+    background-color: rgb(2, 26, 21);
+}
+
+.h4 {
+    align-self: center;
+    font-family: 'Quicksand', sans-serif;
+    color:#ecbd96;
+    font-size: 16px;
+    background-color: rgb(2, 26, 21);
 }
 
 .oranges {
-    background-color: rgb(39, 31, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .keep {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    background-color: rgb(39, 31, 4);
+    background-color: rgb(2, 26, 21);
 }
 
 .buttoned {

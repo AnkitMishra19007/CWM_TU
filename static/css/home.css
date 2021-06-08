@@ -29,9 +29,7 @@
 }
 
 .rest {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 5px;
+    margin-bottom: 0;
     border-color: rgb(177, 168, 117);
     border-width: 0.4px;
     border-style: double;
@@ -66,7 +64,7 @@
     color: honeydew;
 }
 
-img {
+.imgss {
     width: 100%;
     height: 36rem;
     margin-right: 5%;

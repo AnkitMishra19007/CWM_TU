@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import SignupForm, Ewastes, RFPAuthForm
-from .models import Ewaste
+from .models import Bills, Ewaste
 from django.contrib.auth import authenticate, login, logout
 import datetime
 # Create your views here.
@@ -10,12 +10,10 @@ import datetime
 def ewastes(request):
     if request.user.is_superuser:
         data = Ewaste.objects.all()
-        print(data.values)
         return render(request, 'ewastes.html', {'data': data})
     else:
         if request.method == 'POST':
             form = Ewastes(request.POST, request.FILES)
-            print(form.errors)
             if form.is_valid():
                 a = datetime.date.today()
                 nm = form.cleaned_data['name']
@@ -25,7 +23,6 @@ def ewastes(request):
                 it = form.cleaned_data['item_name']
                 id = form.cleaned_data['item_description']
                 ii = form.cleaned_data['item_image']
-                print(nm, em, mo)
                 reg = Ewaste(name=nm, email=em, mobile=mo, address=ad,
                              item_name=it, item_description=id, item_image=ii, date=a)
                 reg.save()
@@ -68,9 +65,26 @@ def signup(request):
 
 
 def profile(request):
-    if request.user.is_authenticated:
+    if request.user.is_superuser:
+        data = Bills.objects.all()
         ew = request.user
-        return render(request, 'profile.html', {'ew': ew})
+        return render(request, 'profile.html', {'ew': ew, 'data': data})
+    elif request.user.is_authenticated:
+        # fetching bills data
+        data = Bills.objects.filter(bill_id=request.user.id)
+        if request.method == 'POST':
+            month = request.POST['month']
+            amount = request.POST['amount']
+            b_id = request.user.id
+            a = datetime.date.today()
+            #saving in database
+            reg = Bills(bill_id=b_id, bill_amount=amount,
+                        bill_month=month, bill_date=a)
+            reg.save()
+            # updating bills data
+            data = Bills.objects.filter(bill_id=request.user.id)
+        ew = request.user
+        return render(request, 'profile.html', {'ew': ew, 'data': data})
     else:
         return HttpResponseRedirect('/logwaste/logins/')
 

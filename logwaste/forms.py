@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.widgets import PasswordInput, TextInput
-from .models import Ewaste, MyUser
+from .models import MyUser, Ewaste
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm

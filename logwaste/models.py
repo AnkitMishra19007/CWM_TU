@@ -77,4 +77,11 @@ class Ewaste(models.Model):
     item_name = models.CharField(max_length=30)
     item_description = models.CharField(max_length=100)
     item_image = models.ImageField(upload_to='media')
-    date = models.DateTimeField()
+    date = models.DateField()
+
+
+class Bills(models.Model):
+    bill_id = models.IntegerField()
+    bill_amount = models.IntegerField()
+    bill_month = models.CharField(max_length=10)
+    bill_date = models.DateField()
