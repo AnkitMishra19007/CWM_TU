@@ -15,6 +15,7 @@ class BillAdmin(admin.ModelAdmin):
     list_display = ['id', 'bill_id', 'bill_amount', 'bill_month', 'bill_date']
 
 
+@admin.register(MyUser)
 class MyUserAdmin(BaseUserAdmin):
     list_display = ['id', 'full_name', 'email', 'date_joined',
                     'last_login', 'is_admin', 'is_active']
@@ -34,4 +35,4 @@ class MyUserAdmin(BaseUserAdmin):
     ordering = ['email', ]
 
 
-admin.site.register(MyUser, MyUserAdmin)
+# admin.site.register(MyUser, MyUserAdmin)

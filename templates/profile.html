@@ -39,14 +39,16 @@
 
     <div class="left2">
         <h2 class="hh1">Payments Received</h2>
-        <table>
+        <table id="customers">
+            <th>UserID</th>
             <th>Name</th>
             <th>Amount</th>
             <th>Month</th>
             <th>Paid On</th>
             <tr>
                 {% for data in data %}
-                <td>{{data.bill_id}}</td>
+                <td>{{data.id}}</td>
+                <td>{{data.full_name}}</td>
                 <td>{{data.bill_amount}}</td>
                 <td>{{data.bill_month}}</td>
                 <td>{{data.bill_date}}</td>
@@ -95,11 +97,11 @@
                 <div class="some">
                     <div class="it">
                         <h5>Month</h5>
-                        <input type="month" id="month" name="month" class="bg"><br>
+                        <input type="month" id="month" name="month" class="bg" required><br>
                     </div>
                     <div class="it">
                         <h5>Amount (₹)</h5>
-                        <input type="text" id="amount" name="amount" class="bg"><br>
+                        <input type="text" id="amount" name="amount" class="bg" required><br>
                     </div>
                     <div class="keep">
                         <input type="submit" value="Pay" class="buttoned">
@@ -114,7 +116,7 @@
     </div>
     <div class="left2">
         <h2 class="hh1">Past Payments</h2>
-        <table>
+        <table id="customers">
             <th>Amount</th>
             <th>Month</th>
             <th>Paid On</th>

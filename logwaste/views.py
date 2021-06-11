@@ -4,6 +4,8 @@ from .forms import SignupForm, Ewastes, RFPAuthForm
 from .models import Bills, Ewaste
 from django.contrib.auth import authenticate, login, logout
 import datetime
+from django.db import connection
+from django.contrib import messages
 # Create your views here.
 
 
@@ -27,6 +29,8 @@ def ewastes(request):
                              item_name=it, item_description=id, item_image=ii, date=a)
                 reg.save()
                 form = Ewastes()
+                messages.success(
+                    request, "The request has been successfully submitted")
         else:
             form = Ewastes()
         return render(request, 'ewastes.html', {'form': form})
@@ -64,9 +68,22 @@ def signup(request):
     return render(request, 'signup.html', {'form': fm})
 
 
+def dictfetchall(cursor):
+    columns = [col[0] for col in cursor.description]
+    return [
+        dict(zip(columns, row))
+        for row in cursor.fetchall()
+    ]
+
+
 def profile(request):
     if request.user.is_superuser:
-        data = Bills.objects.all()
+        # below we are joining two tables by writing pure SQL query. We use dictfetchall for our help
+        cursor = connection.cursor()
+        cursor.execute(
+            "SELECT logwaste_myuser.id,logwaste_myuser.full_name, logwaste_bills.bill_amount, logwaste_bills.bill_month, logwaste_bills.bill_date FROM logwaste_myuser JOIN logwaste_bills ON logwaste_myuser.id=logwaste_bills.bill_id")
+        data = dictfetchall(cursor)
+        print(data)
         ew = request.user
         return render(request, 'profile.html', {'ew': ew, 'data': data})
     elif request.user.is_authenticated:

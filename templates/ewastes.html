@@ -4,6 +4,8 @@
 
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/ewaste.css' %}">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 {% endblock style %}
 
 {% block rest %}
@@ -12,20 +14,41 @@
     <div class="this">
         <h3>E-WASTE REQUESTS</h3>
     </div>
-    <table>
-        <th>Name</th>
-        <th>Item</th>
-        <th>Photo</th>
-        {% for data in data %}
-        <tr>
-            <td>{{data.name}}</td>
-            <td>{{data.item_name}}</td>
-            <td><img src="/media/{{data.item_image}}/" class="less"></td>
-            <td>{{data.date}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="this">
+        <table id="customers">
+            {% csrf_token %}
+            <th>Name</th>
+            <th>Item</th>
+            <th>Photo</th>
+            <th>Description</th>
+            <th>Requested On</th>
+            {% for data in data %}
+            <tr>
+                <td>{{data.name}}</td>
+                <td>{{data.item_name}}</td>
+                <td><img src="/media/{{data.item_image}}/" class="less"></td>
+                <td>{{data.item_description}}</td>
+                <td>{{data.date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+    <!-- if not superuser-->
     {% else %}
+
+    <!-- {% if messages %}
+    {% for messages in messages %}
+    <div class="alert alert-{{ messages.tags }}" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{messages}}
+    </div>
+    {% endfor %}
+    {% endif %} -->
+
     <div class="this">
         <h3>E-WASTE PICKUP REQUEST FORM</h3>
     </div>
