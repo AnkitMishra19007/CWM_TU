@@ -65,8 +65,6 @@ a {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
-    margin-left: 25%;
-    margin-right: 25%;
 }
 
 .below {
@@ -90,11 +88,13 @@ a {
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
     padding: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
     
 }
 
 .less {
-  width:7rem;
+  width:9rem;
     height:100px;
     border-style:solid;
     border-color: #7e4500;
@@ -161,9 +161,10 @@ h3{
 }
 
 .this {
-    align-self: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 5px;
+    align-self:center;
 }
 
 h3 {

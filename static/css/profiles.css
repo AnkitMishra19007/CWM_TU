@@ -77,6 +77,12 @@
     background-color: rgb(2, 26, 21);
 }
 
+.lefts {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
 .up {
     display: flex;
     flex-direction: column;
@@ -215,11 +221,9 @@ h5 {
 }
 
 .img1 {
-    border-color: #f25858;
-    border-style: solid;
-    border-width:3px;
-    border-radius: 8px;
-    padding: 1px;
+padding:2px;
+background-color:#d7701d;
+border-radius:15px;
 }
 
 .bg {
@@ -239,11 +243,11 @@ h5 {
     border-collapse: collapse;
     width: 100%;
     font-size:15px;
-    color:#75f1c8;
+    color:#e8e0be;
   }
   
   #customers td, #customers th {
-    border: 2px solid #4d1f12;
+    border: 2px solid #0d3b1c;
     padding: 5px;
   }
   
@@ -253,6 +257,8 @@ h5 {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #4d1f12;
-    color: #fffffff9;
+    background-color: #0d3b1c;
+    color: #f5a838;
+    
   }
+

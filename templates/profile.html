@@ -9,32 +9,19 @@
 {% block rest %}
 <div class="rest">
     {% if request.user.is_superuser %}
-    <div class="left">
-        <div class="up">
-            <div class="pics">
-                <h2>Profile</h2>
-                <img src="{% static 'images/fox.png' %}" class="img1">
-            </div>
-            <div class="here">
-                <div class="there">Name</div>
-                <div class="fetch">{{ew.full_name}}</div>
-            </div>
-            <div class="here">
-                <div class="there">Email</div>
-                <div class="fetch">{{ew.email}}</div>
-            </div>
-            <div class="here">
-                <div class="there">Mobile</div>
-                <div class="fetch">{{ew.mobile}}</div>
-            </div>
-            <div class="here">
-                <div class="there">Address</div>
-                <div class="fetch">{{ew.address}}</div>
+    <div class="lefts">
+
+        <div class="left">
+            <div class="down">
+                <h3>Say what</h3>
             </div>
         </div>
-        <div class="down">
-            <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
+        <div class="left">
+            <h3>Create Superuser</h3>
+            <h3>Update Dumpyards</h3>
+            <h3>Update Stats</h3>
         </div>
+
     </div>
 
     <div class="left2">
