@@ -20,11 +20,6 @@
                 <a href="/"><img class="logo" src="{% static 'images/Green Leaf Logo.png' %}"></a>
             </div>
             <div class="five">
-                {% if request.user.is_superuser %}
-                <div class="navbuttons">
-                    <a href="{% url 'logout' %}"><button class="button">Logout</button></a>
-                </div>
-                {% endif %}
                 {% if request.user.is_authenticated %}
                 <div class="navbuttons">
                     <a href="/logwaste/profile"><button class="button">Profile</button></a>

@@ -6,5 +6,6 @@ urlpatterns = [
     path('ewastes/', views.ewastes),
     path('signup/', views.signup),
     path('profile/', views.profile),
-    path('logout/', views.user_logout, name='logout')
+    path('logout/', views.user_logout, name='logout'),
+    path('delwaste/<int:id>/', views.ewaste_handle, name='delwaste')
 ]

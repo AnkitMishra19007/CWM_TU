@@ -10,42 +10,10 @@
 <div class="rest">
     {% if request.user.is_superuser %}
     <div class="left">
-        <div class="pics">
-            <h2 class="hh1">Admin</h2>
-            <img src="{% static 'images/orca.png' %}" class="img1">
-        </div>
-    </div>
-
-    <div class="left2">
-        <h2 class="hh1">Payments Received</h2>
-        <table id="customers">
-            <th>UserID</th>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Month</th>
-            <th>Paid On</th>
-            <tr>
-                {% for data in data %}
-                <td>{{data.id}}</td>
-                <td>{{data.full_name}}</td>
-                <td>{{data.bill_amount}}</td>
-                <td>{{data.bill_month}}</td>
-                <td>{{data.bill_date}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-    {% else %}
-    <div class="left">
-        <div class="up">
+        <div class="right">
             <div class="pics">
-                <h2>Profile</h2>
-                {% if ew.full_name.0 < 'F' %} <img src="{% static 'images/fox.png' %}" class="img1">
-                    {% elif ew.full_name.0 < 'L' %} <img src="{% static 'images/lion.png' %}" class="img1">
-                        {% elif ew.full_name.0 < 'R' %} <img src="{% static 'images/penguin.png' %}" class="img1">
-                            {% else %}
-                            <img src="{% static 'images/owl.png' %}" class="img1">
-                            {% endif %}
+                <h2 class="hh1">Admin</h2>
+                <img src="{% static 'images/orca.png' %}" class="img1">
             </div>
             <div class="here">
                 <div class="there">Name</div>
@@ -63,51 +31,131 @@
                 <div class="there">Address</div>
                 <div class="fetch">{{ew.address}}</div>
             </div>
+            <div class="down">
+                <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
+            </div>
         </div>
-        <div class="down">
-            <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
+        <div class="right">
+            <h2 class="hh1">Registered Users</h2>
+            <table id="customers">
+                <th>UserID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <tr>
+                    {% for d1 in d1 %}
+                    <td>{{d1.id}}</td>
+                    <td>{{d1.full_name}}</td>
+                    <td>{{d1.email}}</td>
+                    <td>{{d1.mobile}}</td>
+                    <td>{{d1.address}}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
-    <div class="left1">
-        <h2 class="hh">Monthly Bill Payment</h2>
-        <div class="oranges">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <div class="some">
-                    <div class="it">
-                        <h5>Month</h5>
-                        <input type="month" id="month" name="month" class="bg" required><br>
-                    </div>
-                    <div class="it">
-                        <h5>Amount (₹)</h5>
-                        <input type="text" id="amount" name="amount" class="bg" required><br>
-                    </div>
-                    <div class="keep">
-                        <input type="submit" value="Pay" class="buttoned">
-                    </div>
 
+    <div class="left">
+        <div class="right">
+            <h2 class="hh1">Payments Received</h2>
+            <table id="customers">
+                <th>UserID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Month</th>
+                <th>Paid On</th>
+                <tr>
+                    {% for data in data %}
+                    <td>{{data.id}}</td>
+                    <td>{{data.full_name}}</td>
+                    <td>{{data.bill_amount}}</td>
+                    <td>{{data.bill_month}}</td>
+                    <td>{{data.bill_date}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+
+    {% else %}
+    <div class="lefts">
+        <div class="right">
+            <div class="up">
+                <div class="pics">
+                    <h2>Profile</h2>
+                    {% if ew.full_name.0 < 'F' %} <img src="{% static 'images/fox.png' %}" class="img1">
+                        {% elif ew.full_name.0 < 'L' %} <img src="{% static 'images/lion.png' %}" class="img1">
+                            {% elif ew.full_name.0 < 'R' %} <img src="{% static 'images/penguin.png' %}" class="img1">
+                                {% else %}
+                                <img src="{% static 'images/owl.png' %}" class="img1">
+                                {% endif %}
                 </div>
-            </form>
+                <div class="here">
+                    <div class="there">Name</div>
+                    <div class="fetch">{{ew.full_name}}</div>
+                </div>
+                <div class="here">
+                    <div class="there">Email</div>
+                    <div class="fetch">{{ew.email}}</div>
+                </div>
+                <div class="here">
+                    <div class="there">Mobile</div>
+                    <div class="fetch">{{ew.mobile}}</div>
+                </div>
+                <div class="here">
+                    <div class="there">Address</div>
+                    <div class="fetch">{{ew.address}}</div>
+                </div>
+            </div>
+            <div class="down">
+                <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
+            </div>
         </div>
+        <div class="right">
+            <h2 class="hh">Monthly Bill Payment</h2>
+            <div class="oranges">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="some">
+                        <div class="it">
+                            <h5>Month</h5>
+                            <input type="month" id="month" name="month" class="bg" required><br>
+                        </div>
+                        <div class="it">
+                            <h5>Amount (₹)</h5>
+                            <input type="text" id="amount" name="amount" class="bg" required><br>
+                        </div>
+                        <div class="keep">
+                            <input type="submit" value="Pay" class="buttoned">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
 
 
 
+        </div>
+        <div class="right">
+            <h2 class="hh1">Past Payments</h2>
+            <table id="customers">
+                <th>Amount</th>
+                <th>Month</th>
+                <th>Paid On</th>
+                <tr>
+                    {% for data in data %}
+                    <td>{{data.bill_amount}}</td>
+                    <td>{{data.bill_month}}</td>
+                    <td>{{data.bill_date}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
-    <div class="left2">
-        <h2 class="hh1">Past Payments</h2>
-        <table id="customers">
-            <th>Amount</th>
-            <th>Month</th>
-            <th>Paid On</th>
-            <tr>
-                {% for data in data %}
-                <td>{{data.bill_amount}}</td>
-                <td>{{data.bill_month}}</td>
-                <td>{{data.bill_date}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
+
     {% endif %}
 </div>
 

@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import SignupForm, Ewastes, RFPAuthForm
-from .models import Bills, Ewaste, MyUser
+from .models import Bills, Ewaste, MyUser, PickedEwaste
 from django.contrib.auth import authenticate, login, logout
 import datetime
 from django.db import connection
@@ -11,7 +11,6 @@ from django.contrib import messages
 
 def ewastes(request):
     if request.user.is_superuser:
-
         data = Ewaste.objects.all()
         return render(request, 'ewastes.html', {'data': data})
     else:
@@ -30,11 +29,38 @@ def ewastes(request):
                              item_name=it, item_description=id, item_image=ii, date=a)
                 reg.save()
                 form = Ewastes()
-                messages.success(
-                    request, "The request has been successfully submitted")
+                messages.add_message(
+                    request, messages.SUCCESS, "The form has been successfully submitted, You will be contacted soon!")
         else:
             form = Ewastes()
         return render(request, 'ewastes.html', {'form': form})
+
+
+def ewaste_handle(request, id):
+    if request.method == 'POST':
+        d = Ewaste.objects.get(pk=id)
+        d.delete()
+        messages.add_message(
+            request, messages.INFO, "The selected E-waste has been rejected. The related user will be notified about it!")
+        return HttpResponseRedirect('/logwaste/ewastes/')
+    else:
+        d = Ewaste.objects.get(pk=id)
+        nm = d.name
+        em = d.email
+        mo = d.mobile
+        ad = d.address
+        it = d.item_name
+        id = d.item_description
+        ii = d.item_image
+        dd = d.date
+        a = datetime.date.today()
+        reg = PickedEwaste(name=nm, email=em, mobile=mo, address=ad,
+                           item_name=it, item_description=id, item_image=ii, date=dd, picked_date=a)
+        reg.save()
+        d.delete()
+        messages.add_message(
+            request, messages.SUCCESS, "The selecetd E-waste has been successfully picked and will be sent to process soon!")
+        return HttpResponseRedirect('/logwaste/ewastes/')
 
 
 def logins(request):
@@ -81,15 +107,14 @@ def dictfetchall(cursor):
 def profile(request):
     if request.user.is_superuser:
         # how many users are there
-        d1 = MyUser.objects.all().count()-1
-        d2 = Ewaste.objects.all().count()
+        d1 = MyUser.objects.all().filter(is_superuser=False)
         # below we are joining two tables by writing pure SQL query. We use dictfetchall for our help
         cursor = connection.cursor()
         cursor.execute(
             "SELECT logwaste_myuser.id,logwaste_myuser.full_name, logwaste_bills.bill_amount, logwaste_bills.bill_month, logwaste_bills.bill_date FROM logwaste_myuser JOIN logwaste_bills ON logwaste_myuser.id=logwaste_bills.bill_id")
         data = dictfetchall(cursor)
         ew = request.user
-        return render(request, 'profile.html', {'ew': ew, 'data': data, 'd1': d1, 'd2': d2})
+        return render(request, 'profile.html', {'ew': ew, 'data': data, 'd1': d1})
     elif request.user.is_authenticated:
         # fetching bills data
         data = Bills.objects.filter(bill_id=request.user.id)

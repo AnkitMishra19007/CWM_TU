@@ -4,17 +4,25 @@
 
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/ewaste.css' %}">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 {% endblock style %}
 
 {% block rest %}
 <div class="rest">
     {% if request.user.is_superuser %}
-    <div class="this">
-        <h3>E-WASTE PICKUP REQUESTS</h3>
+
+    {% if messages %}
+    {% for messages in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <h2 class="begin">{% if messages.tags == 'info' %}Rejected{% else %}Picked{% endif %}</h2> {{messages}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    {% endfor %}
+    {% endif %}
+
     <div class="this">
+        <h2>E-WASTE PICKUP REQUESTS</h2>
+    </div>
+    <div class="thiss">
         <table id="customers">
             {% csrf_token %}
             <th>Name</th>
@@ -34,10 +42,12 @@
                 <td>{{data.address}}</td>
                 <td>
                     <div class="rowy">
-                        <input type="submit" class="btns" value="Pickup">
-                        <input type="submit" class="btns" value="Reject">
+                        <a href="{% url 'delwaste' data.id %}"><button class="btns">Pickup</button></a>
+                        <form action="{% url 'delwaste' data.id %}" method="POST">
+                            {% csrf_token %}
+                            <input type="submit" class="btns" value="Reject">
+                        </form>
                     </div>
-
                 </td>
             </tr>
             {% endfor %}
@@ -48,16 +58,14 @@
     <!-- if not superuser-->
     {% else %}
 
-    <!-- {% if messages %}
+    {% if messages %}
     {% for messages in messages %}
-    <div class="alert alert-{{ messages.tags }}" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        {{messages}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <h2 class="begin">Done</h2> {{messages}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endfor %}
-    {% endif %} -->
+    {% endif %}
 
     <div class="this">
         <h3 class="cnt">E-WASTE PICKUP REQUEST FORM</h3>
@@ -72,13 +80,19 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="btns">
+            <div class="cntr">
                 <input type="submit" class="btn" value="Request">
             </div>
-
         </form>
+
     </div>>
     {% endif %}
 
 </div>
 {% endblock rest %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+{% endblock script %}

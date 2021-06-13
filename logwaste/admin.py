@@ -1,13 +1,19 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import MyUser, Bills, Ewaste
+from .models import MyUser, Bills, Ewaste, PickedEwaste
 # Register your models here.
 
 
 @admin.register(Ewaste)
 class EwasteAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'mobile', 'address',
+    list_display = ['id', 'name', 'email', 'mobile', 'address',
                     'item_name', 'item_description', 'item_image', 'date']
+
+
+@admin.register(PickedEwaste)
+class PickedAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'email', 'mobile', 'address',
+                    'item_name', 'item_description', 'item_image', 'date', 'picked_date']
 
 
 @admin.register(Bills)

@@ -80,6 +80,18 @@ class Ewaste(models.Model):
     date = models.DateField()
 
 
+class PickedEwaste(models.Model):
+    name = models.CharField(max_length=70)
+    email = models.EmailField(max_length=100)
+    mobile = models.CharField(max_length=10)
+    address = models.CharField(max_length=100)
+    item_name = models.CharField(max_length=30)
+    item_description = models.CharField(max_length=100)
+    item_image = models.ImageField(upload_to='media')
+    date = models.DateField()
+    picked_date = models.DateField()
+
+
 class Bills(models.Model):
     bill_id = models.IntegerField()
     bill_amount = models.IntegerField()

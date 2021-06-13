@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 * {
@@ -64,7 +63,7 @@ a {
 .rest {
     display: flex;
     flex-direction: column;
-    margin-top: 2%;
+
 }
 
 .below {
@@ -90,7 +89,12 @@ a {
     padding: 20px;
     margin-left: 25%;
     margin-right: 25%;
-    
+}
+
+.cntr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .less {
@@ -120,10 +124,17 @@ a {
     background-color: rgb(30, 122, 18);
     color: rgb(255, 255, 255);
     font-size: 18px;
+    align-self: center;
+    width: 60%;
+    margin-top: 8%;
 }
 .btn:hover {
     background-color: rgb(184, 37, 0);
     color: honeydew;
+}
+
+.begin {
+    background-color: inherit;
 }
 
 .btns {
@@ -135,6 +146,7 @@ a {
     transition-duration: 0.3s;
     border-color:#b97c7c;
     padding:7px;
+    flex-shrink: 0;
 }
 
 .btns:hover {
@@ -146,15 +158,6 @@ a {
     margin: 8px;
     display: flex;
     flex-direction: column;
-}
-
-
-
-h3{
-    align-self: center;
-    font-family: 'Quicksand', sans-serif;
-    color: tomato;
-    font-size: 23px;
 }
 
 .bg {
@@ -181,20 +184,28 @@ h3{
     display: flex;
     flex-direction: row;
     padding: 5px;
+    align-self:center;
+}
+
+.thiss {
+    display: flex;
+    flex-direction: row;
+    padding: 1px;
 }
 
 h3 {
     color:#77c023;
-    font-size: 20px;
-    align-self:center;
-   
+    font-size: 30px;
+    font-family: 'EB Garamond', serif;
 }
 
-.cnt {
+h2 {
+    font-family: 'Quicksand', sans-serif;
     color:#77c023;
-    font-size: 30px;
-    align-self:center;
+    font-size: 20px;
+    font-family: 'EB Garamond', serif;
 }
+
 
 #customers {
     font-family: 'Quicksand', sans-serif;
