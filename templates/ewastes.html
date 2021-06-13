@@ -22,6 +22,7 @@
             <th>Photo</th>
             <th>Description</th>
             <th>Requested On</th>
+            <th>Address</th>
             <th>Action</th>
             {% for data in data %}
             <tr>
@@ -30,10 +31,11 @@
                 <td><img src="/media/{{data.item_image}}/" class="less"></td>
                 <td>{{data.item_description}}</td>
                 <td>{{data.date}}</td>
+                <td>{{data.address}}</td>
                 <td>
                     <div class="rowy">
-                        <input type="submit" class="btn" value="Pickup">
-                        <input type="submit" class="btn" value="Reject">
+                        <input type="submit" class="btns" value="Pickup">
+                        <input type="submit" class="btns" value="Reject">
                     </div>
 
                 </td>
@@ -58,7 +60,7 @@
     {% endif %} -->
 
     <div class="this">
-        <h3>E-WASTE PICKUP REQUEST FORM</h3>
+        <h3 class="cnt">E-WASTE PICKUP REQUEST FORM</h3>
     </div>
     <div class="forms">
         <form action="" method="POST" enctype="multipart/form-data" novalidate>

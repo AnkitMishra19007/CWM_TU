@@ -276,3 +276,13 @@ border-radius:15px;
     background-color: rgb(215 112 29);
     color: honeydew;
 }
+
+a {
+  text-decoration: none;
+  background-color: inherit;
+  color: white;
+}
+
+a:hover {
+  color: #ffffff;
+}
