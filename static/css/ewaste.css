@@ -114,6 +114,12 @@ a {
     margin-top: 8%;
 }
 
+.rowy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .btn {
     font-family: 'Quicksand', sans-serif;
     background-color: rgb(30, 122, 18);
@@ -121,16 +127,23 @@ a {
     font-size: 18px;
 }
 
-.double {
-    margin: 8px;
-    display: flex;
-    flex-direction: column;
+.btn btns {
+    font-size: 15px;
 }
 
 .btn:hover {
     background-color: rgb(184, 37, 0);
     color: honeydew;
 }
+
+
+
+.double {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 h3{
@@ -164,20 +177,20 @@ h3{
     display: flex;
     flex-direction: row;
     padding: 5px;
-    align-self:center;
+    align-self: center;
 }
 
 h3 {
     color:#77c023;
     font-size: 30px;
-
+   
 }
 
 #customers {
     font-family: 'Quicksand', sans-serif;
     border-collapse: collapse;
     width: 100%;
-    font-size:18px;
+    font-size:15px;
     color:#e8e0be;
   }
   

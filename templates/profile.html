@@ -9,18 +9,17 @@
 {% block rest %}
 <div class="rest">
     {% if request.user.is_superuser %}
-    <div class="lefts">
+    <div class="left">
+        <div class="pics">
+            <h2 class="hh1">Admin</h2>
+            <img src="{% static 'images/orca.png' %}" class="img1">
+        </div>
+        <button class="btn">Create Admin</button>
+        <button class="btn">Update Dumpyards</button>
+        <button class="btn">Update Stats</button>
+        <button class="btn">Log out</button>
 
-        <div class="left">
-            <div class="down">
-                <h3>Say what</h3>
-            </div>
-        </div>
-        <div class="left">
-            <h3>Create Superuser</h3>
-            <h3>Update Dumpyards</h3>
-            <h3>Update Stats</h3>
-        </div>
+
 
     </div>
 

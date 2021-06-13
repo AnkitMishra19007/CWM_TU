@@ -26,6 +26,7 @@
     height: 70px;
     width: 180px;
     align-self:center;
+    
 }
 
 .five {
@@ -75,12 +76,6 @@
     margin: 5px;
     border-radius: 4px;
     background-color: rgb(2, 26, 21);
-}
-
-.lefts {
-    display: flex;
-    flex-direction: column;
-    flex:1;
 }
 
 .up {
@@ -262,3 +257,22 @@ border-radius:15px;
     
   }
 
+  .extra {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .btn {
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgb(8 70 45);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    margin:15px;
+}
+
+
+.btn:hover {
+    background-color: rgb(215 112 29);
+    color: honeydew;
+}

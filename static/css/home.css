@@ -11,6 +11,7 @@
 .full {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .navbar {
@@ -33,6 +34,8 @@
     border-color: rgb(177, 168, 117);
     border-width: 0.4px;
     border-style: double;
+    display: flex;
+    flex-direction: column;
 }
 
 .five {

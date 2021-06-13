@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import SignupForm, Ewastes, RFPAuthForm
-from .models import Bills, Ewaste
+from .models import Bills, Ewaste, MyUser
 from django.contrib.auth import authenticate, login, logout
 import datetime
 from django.db import connection
@@ -11,6 +11,7 @@ from django.contrib import messages
 
 def ewastes(request):
     if request.user.is_superuser:
+
         data = Ewaste.objects.all()
         return render(request, 'ewastes.html', {'data': data})
     else:
@@ -37,6 +38,7 @@ def ewastes(request):
 
 
 def logins(request):
+    print(request.session.get_expire_at_browser_close())
     if request.method == 'POST':
         fm = RFPAuthForm(request=request, data=request.POST)
         if fm.is_valid():
@@ -78,14 +80,16 @@ def dictfetchall(cursor):
 
 def profile(request):
     if request.user.is_superuser:
+        # how many users are there
+        d1 = MyUser.objects.all().count()-1
+        d2 = Ewaste.objects.all().count()
         # below we are joining two tables by writing pure SQL query. We use dictfetchall for our help
         cursor = connection.cursor()
         cursor.execute(
             "SELECT logwaste_myuser.id,logwaste_myuser.full_name, logwaste_bills.bill_amount, logwaste_bills.bill_month, logwaste_bills.bill_date FROM logwaste_myuser JOIN logwaste_bills ON logwaste_myuser.id=logwaste_bills.bill_id")
         data = dictfetchall(cursor)
-        print(data)
         ew = request.user
-        return render(request, 'profile.html', {'ew': ew, 'data': data})
+        return render(request, 'profile.html', {'ew': ew, 'data': data, 'd1': d1, 'd2': d2})
     elif request.user.is_authenticated:
         # fetching bills data
         data = Bills.objects.filter(bill_id=request.user.id)
