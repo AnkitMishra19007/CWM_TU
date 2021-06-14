@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU Contact{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    <div class="left">
+        <h3>About</h3>
+        <h5>© This website is crafted by CSB18046</h5>
+        <p>CWM-TU stands for Campus Waste Management Tezpur University. This website is made to organise the
+            existing waste Management
+            process. Users can create account, pay monthly bills, find nearby dumpyards to dispose garbage
+            temporarily, request for E-waste pickup from their doorsteps
+            and
+            see monthly stats about waste generation.</p>
+
+
+    </div>
+
+
+    <div class="left">
+        <h3>Contacts</h3>
+        <div class="below">
+            <div class="down">
+                <div class="part">
+                    <div class="words">
+                        <h4> For queries write us at</h4>
+                    </div>
+                    <div class="link">
+                        <h6>queries-cwm-tu@gmail.com</h6>
+                    </div>
+                </div>
+
+                <div class="part">
+                    <div class="words">
+                        <h4>For complaints write us at</h4>
+                    </div>
+                    <div class="link">
+                        <h6>complaint-cwm-tu@gmail.com</h6>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="words">
+                        <h4> For feedback write us at</h4>
+                    </div>
+                    <div class="link">
+                        <h6>feedback-cwm-tu@gmail.com</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com"><img src="{% static 'images/insta.png' %}" class="img1"></a>
+                <a href="https://twitter.com/"><img src="{% static 'images/twitter.png' %}" class="img1"></a>
+                <a href="www.wikipedia.com"><img src="{% static 'images/linked.png' %}" class="img1"></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock rest %}

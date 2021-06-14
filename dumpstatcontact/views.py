@@ -11,5 +11,5 @@ def stat(request):
     return render(request, 'stats.html')
 
 
-def contact(request):
-    return render(request, 'contacts.html')
+def about(request):
+    return render(request, 'about.html')
