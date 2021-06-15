@@ -8,6 +8,7 @@
 
 {% block rest %}
 <div class="rest">
+    <!--If a superuser-->
     {% if request.user.is_superuser %}
     <div class="left">
         <div class="right">
@@ -81,17 +82,16 @@
 
 
     {% else %}
+    <!--Not a superuser-->
     <div class="lefts">
         <div class="right">
             <div class="up">
                 <div class="pics">
                     <h2>Profile</h2>
-                    {% if ew.full_name.0 < 'F' %} <img src="{% static 'images/fox.png' %}" class="img1">
-                        {% elif ew.full_name.0 < 'L' %} <img src="{% static 'images/lion.png' %}" class="img1">
-                            {% elif ew.full_name.0 < 'R' %} <img src="{% static 'images/penguin.png' %}" class="img1">
-                                {% else %}
-                                <img src="{% static 'images/owl.png' %}" class="img1">
-                                {% endif %}
+                    {% if ew.full_name.0 < 'L' %} <img src="{% static 'images/penguin.png' %}" class="img1">
+                        {% else %}
+                        <img src="{% static 'images/panda.png' %}" class="img1">
+                        {% endif %}
                 </div>
                 <div class="here">
                     <div class="there">Name</div>

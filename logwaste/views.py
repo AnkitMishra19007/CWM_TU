@@ -37,12 +37,14 @@ def ewastes(request):
 
 
 def ewaste_handle(request, id):
+    # Reject
     if request.method == 'POST':
         d = Ewaste.objects.get(pk=id)
         d.delete()
         messages.add_message(
             request, messages.INFO, "The selected E-waste has been rejected. The related user will be notified about it!")
         return HttpResponseRedirect('/logwaste/ewastes/')
+    # Pickup
     else:
         d = Ewaste.objects.get(pk=id)
         nm = d.name
@@ -80,7 +82,6 @@ def logins(request):
 
 
 def signup(request):
-
     if request.method == 'POST':
         fm = SignupForm(request.POST)
         if fm.is_valid():

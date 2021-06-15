@@ -79,6 +79,11 @@ class Ewaste(models.Model):
     item_image = models.ImageField(upload_to='media')
     date = models.DateField()
 
+    # overwriting delete method to delete pics from media
+    def delete(self, *args, **kwargs):
+        self.item_image.delete()
+        super().delete(*args, **kwargs)
+
 
 class PickedEwaste(models.Model):
     name = models.CharField(max_length=70)
