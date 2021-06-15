@@ -65,6 +65,11 @@ def ewaste_handle(request, id):
         return HttpResponseRedirect('/logwaste/ewastes/')
 
 
+def picked(request):
+    data = PickedEwaste.objects.all()
+    return render(request, 'picked.html', {'data': data})
+
+
 def logins(request):
     print(request.session.get_expire_at_browser_close())
     if request.method == 'POST':

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} CWM-TU Ewaste {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/ewaste.css' %}">
+{% endblock style %}
+
+{% block rest %}
+<div class="rest">
+    <div class="this">
+        <h2>PICKED-UP E-WASTE</h2>
+    </div>
+    <div class="thiss">
+        <table id="customers">
+            {% csrf_token %}
+            <th>Name</th>
+            <th>Item</th>
+            <th>Photo</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Requested On</th>
+            <th>Picked On</th>
+            {% for data in data %}
+            <tr>
+                <td>{{data.name}}</td>
+                <td>{{data.item_name}}</td>
+                <td><img src="/media/{{data.item_image}}/" class="less"></td>
+                <td>{{data.item_description}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.date}}</td>
+                <td>{{data.picked_date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+{% endblock rest %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+{% endblock script %}
