@@ -110,14 +110,6 @@ a {
     flex-direction: column;
 }
 
-.rowy {
-   padding:10px;
-   background-color:#061611;
-   display:flex;
-   flex-direction:row;
-   justify-content:space-around;
-   
-}
 
 .btn {
     font-family: 'Quicksand', sans-serif;

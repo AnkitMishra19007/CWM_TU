@@ -71,7 +71,7 @@ a {
     flex-direction: row;
     font-size: 20px;
     color: rgb(187, 243, 224);
-    padding: 20px;
+    padding: 10px;
     margin-top: 1%;
     justify-content: space-between;
 }
@@ -84,13 +84,12 @@ a {
     border-style: solid;
     border-radius: 5px;
     padding: 10px;
-    margin-left: 2%;
-    margin-right: 2%;
+    flex:1;
     background-color: #1a2918;
 }
 
 img {
-    width: 300px;
+    width: 350px;
     height: 300px;
     border-radius: 5px;
 }
