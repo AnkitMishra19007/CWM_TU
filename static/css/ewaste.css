@@ -162,6 +162,12 @@ a {
     border-radius: 3px;
 }
 
+.rowy {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
 .bgi {
     color: rgb(235, 155, 50);
 }
