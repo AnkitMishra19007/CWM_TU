@@ -160,47 +160,13 @@ a {
     flex-direction: column;
 }
 
-.bg {
-    background-color: #141D11;
-    color: rgb(235, 155, 50);
-    font-size: 20px;
-    border-style: solid;
-    border-color: rgb(151, 124, 3);
-    border-width: 1px;
-    border-radius: 3px;
-}
-
-.bgi {
-    color: rgb(235, 155, 50);
-}
-
-.err {
-    color: rgb(255, 220, 24);
-    font-size: 12px;
-    font-family: 'Quicksand', sans-serif;
-}
-
 .this {
     display: flex;
     flex-direction: row;
     padding: 5px;
     align-items:center;
-    justify-content:space-between;
-}
-
-.thiss {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
     justify-content:center;
 }
-
-h3 {
-    color:#77c023;
-    font-size: 30px;
-    font-family: 'EB Garamond', serif;
-}
-
 h2 {
     font-family: 'Quicksand', sans-serif;
     color:#77c023;
