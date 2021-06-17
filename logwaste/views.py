@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate
 from django.shortcuts import render, HttpResponseRedirect
-from .forms import SignupForm, Ewastes, RFPAuthForm
+from .forms import SignupForm, Ewastes, RFPAuthForm, EditForm
 from .models import Bills, Ewaste, MyUser, PickedEwaste
 from django.contrib.auth import authenticate, login, logout
 import datetime
@@ -102,6 +102,32 @@ def signup(request):
     return render(request, 'signup.html', {'form': fm})
 
 
+def edit(request):
+    print("Called Edit")
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            pi = MyUser.objects.get(pk=request.user.id)
+            fm = EditForm(request.POST, instance=pi)
+            if fm.is_valid():
+                fm.save()
+                return HttpResponseRedirect("/logwaste/profile/")
+        else:
+            pi = MyUser.objects.get(pk=request.user.id)
+            fm = EditForm(instance=pi)
+        return render(request, 'edit.html', {'fm': fm})
+    else:
+        return HttpResponseRedirect('/logwaste/logins/')
+
+
+def delete_id(request):
+    if request.method == 'POST':
+        d = MyUser.objects.get(pk=request.user.id)
+        d.delete()
+        messages.add_message(
+            request, messages.INFO, "Your ID has been successfully deleted. Signup again to access more features!")
+        return HttpResponseRedirect('/logwaste/logins/')
+
+
 def dictfetchall(cursor):
     columns = [col[0] for col in cursor.description]
     return [
@@ -111,6 +137,7 @@ def dictfetchall(cursor):
 
 
 def profile(request):
+    print("Called profile")
     if request.user.is_superuser:
         # how many users are there
         d1 = MyUser.objects.all().filter(is_superuser=False)
@@ -121,6 +148,8 @@ def profile(request):
         data = dictfetchall(cursor)
         ew = request.user
         return render(request, 'profile.html', {'ew': ew, 'data': data, 'd1': d1})
+
+    # Not superuser
     elif request.user.is_authenticated:
         # fetching bills data
         data = Bills.objects.filter(bill_id=request.user.id)

@@ -3,7 +3,7 @@
 {% block title %} CWM-TU Dumpyard {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/profiles.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock style %}
 
 {% block rest %}
@@ -111,6 +111,13 @@
                 </div>
             </div>
             <div class="down">
+
+                <form action="{% url 'delete' %}" method="POST">
+                    {% csrf_token %}
+                    <button class="buttoned">Delete</button>
+                </form>
+
+                <a href="{% url 'edit' %}"><button class="buttoned">Edit</button></a>
                 <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
             </div>
         </div>

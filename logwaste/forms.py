@@ -33,6 +33,21 @@ class SignupForm(UserCreationForm):
         }
 
 
+class EditForm(forms.ModelForm):
+    class Meta:
+        model = MyUser
+        fields = ['full_name', 'email', 'mobile',
+                  'address']
+        labels = {'full_name': 'Name', 'email': 'Email',
+                  'mobile': 'Mobile', 'address': 'Address'}
+        widgets = {
+            'full_name': forms.TextInput(attrs={'class': 'bg'}),
+            'email': forms.EmailInput(attrs={'class': 'bg'}),
+            'mobile': forms.TextInput(attrs={'class': 'bg'}),
+            'address': forms.TextInput(attrs={'class': 'bg'}),
+        }
+
+
 class Ewastes(forms.ModelForm):
     class Meta:
         model = Ewaste
