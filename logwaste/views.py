@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import SignupForm, Ewastes, RFPAuthForm, EditForm
-from .models import Bills, Ewaste, MyUser, PickedEwaste
+from .models import Bills, Ewaste, MyUser
 from django.contrib.auth import authenticate, login, logout
 import datetime
 from django.db import connection
@@ -11,7 +11,7 @@ from django.contrib import messages
 
 def ewastes(request):
     if request.user.is_superuser:
-        data = Ewaste.objects.all()
+        data = Ewaste.objects.filter(picked=False)
         return render(request, 'ewastes.html', {'data': data})
     else:
         if request.method == 'POST':
@@ -26,7 +26,7 @@ def ewastes(request):
                 id = form.cleaned_data['item_description']
                 ii = form.cleaned_data['item_image']
                 reg = Ewaste(name=nm, email=em, mobile=mo, address=ad,
-                             item_name=it, item_description=id, item_image=ii, date=a)
+                             item_name=it, item_description=id, item_image=ii, date=a, picked=False, picked_date=a)
                 reg.save()
                 form = Ewastes()
                 messages.add_message(
@@ -47,26 +47,17 @@ def ewaste_handle(request, id):
     # Pickup
     else:
         d = Ewaste.objects.get(pk=id)
-        nm = d.name
-        em = d.email
-        mo = d.mobile
-        ad = d.address
-        it = d.item_name
-        id = d.item_description
-        ii = d.item_image
-        dd = d.date
         a = datetime.date.today()
-        reg = PickedEwaste(name=nm, email=em, mobile=mo, address=ad,
-                           item_name=it, item_description=id, item_image=ii, date=dd, picked_date=a)
-        reg.save()
-        d.delete()
+        d.picked = True
+        d.picked_date = a
+        d.save()
         messages.add_message(
             request, messages.SUCCESS, "The selecetd E-waste has been successfully picked and will be sent to process soon!")
         return HttpResponseRedirect('/logwaste/ewastes/')
 
 
 def picked(request):
-    data = PickedEwaste.objects.all()
+    data = Ewaste.objects.filter(picked=True)
     return render(request, 'picked.html', {'data': data})
 
 

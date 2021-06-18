@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from django.db.models.fields import EmailField
+from django.db.models.fields import BooleanField, EmailField
 # Create your models here.
 
 
@@ -78,23 +78,13 @@ class Ewaste(models.Model):
     item_description = models.CharField(max_length=100)
     item_image = models.ImageField(upload_to='media')
     date = models.DateField()
+    picked = BooleanField()
+    picked_date = models.DateField()
 
     # overwriting delete method to delete pics from media
     def delete(self, *args, **kwargs):
         self.item_image.delete()
         super().delete(*args, **kwargs)
-
-
-class PickedEwaste(models.Model):
-    name = models.CharField(max_length=70)
-    email = models.EmailField(max_length=100)
-    mobile = models.CharField(max_length=10)
-    address = models.CharField(max_length=100)
-    item_name = models.CharField(max_length=30)
-    item_description = models.CharField(max_length=100)
-    item_image = models.ImageField(upload_to='media')
-    date = models.DateField()
-    picked_date = models.DateField()
 
 
 class Bills(models.Model):

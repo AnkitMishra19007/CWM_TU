@@ -94,9 +94,7 @@ h3 {
 .words{
 display: flex;
 flex: 1;
-border-right-style:solid;
-border-right-width:1px;
-border-right-color:#ff5100;
+
 align-items:center;
 justify-content:flex-start;
 background-color: rgb(34, 28, 6);
@@ -105,9 +103,7 @@ background-color: rgb(34, 28, 6);
 .link{
 display: flex;
 flex: 1;
-border-left-style:solid;
-border-left-width:1px;
-border-left-color:#ff5100;
+
 align-items:center;
 justify-content:flex-end;
 background-color: rgb(34, 28, 6);
