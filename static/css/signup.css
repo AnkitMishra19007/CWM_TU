@@ -152,6 +152,13 @@ a {
     width:100%;
 }
 
+.thi {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
 .spray{
     display:flex;
     flex-direction:row;
