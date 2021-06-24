@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
-* {
-    background-color: #141D11;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 .full {
     display: flex;
     flex-direction: column;
+    background-color: #01173e;
+    height: 100vh;
+    background-image: linear-gradient(180deg, #01173e 0%, #4a0135 100%);
 }
 
 .navbar {
@@ -18,50 +14,52 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-image: linear-gradient(to bottom right, rgb(5, 61, 38) , rgb(6,8,9));
-    border-style: solid;
+    background-color: initial;
+        border-bottom-width:2px;
+    border-bottom-style:solid;
+    border-bottom-color: #011c4a;
+
 }
 
 .logo {
-    height: 70px;
-    width: 180px;
+    height:80px;
+    width: 250px;
     align-self:center;
-    
 }
-
 .five {
     display: flex;
     flex-direction: row;
     align-self: center;
-    background-color: rgb(92, 30, 30);
+    background-color: initial;
     margin-right: 10px;
 }
 
 .button {
     font-family: 'Quicksand', sans-serif;
     color: rgba(253, 226, 204, 0.932);
-    font-size: 16px;
-    background-color: #141D11;
+    font-size: 15px;
+    background-color: inherit;
     margin-right: 2px;
     margin-left: 2px;
-    padding: 4px 16px;
+    padding: 3px 16px;
     border-width: 2px;
-    border-color: rgb(151, 124, 3);
+    border-color: #b76f13;
     border-radius: 5%;
+    border-style:solid;
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: rgb(119, 98, 2);
-    color: honeydew;
+    background-color: #01082d;
+    color: #f54949;
 }
 .rest {
     display: flex;
     flex-direction: column;
     color: aliceblue;
     padding: 5px;
-    
+    background-color: initial;
 }
 
 .left {
@@ -89,7 +87,7 @@
     padding: 20px;
     margin: 5px;
     border-radius: 4px;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
     height:470px; 
     overflow: auto;
 }
@@ -97,7 +95,7 @@
 .up {
     display: flex;
     flex-direction: column;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .some {
@@ -110,21 +108,21 @@
     border-style: solid;
     border-color: rgb(151, 124, 3);
     border-radius: 3px;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .it {
 
     align-self: center;
     padding: 15px;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .down {
 display: flex;
 flex-direction: row;
 justify-content:space-around;
-background-color: rgb(2, 26, 21);
+background-color: initial;
 margin-top: 20px;
 }
 
@@ -141,31 +139,31 @@ margin-top: 20px;
     padding: 5px;
     font-size: 16px;
     color: rgb(252, 238, 176);
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .pics {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .there {
     font-family: 'Quicksand', sans-serif;
     color:rgb(215, 241, 169);
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .fetch {
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 h2 {
     color:#77c023;
     font-size: 28px;
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .hh {
@@ -173,7 +171,7 @@ h2 {
     font-size: 28px;
     font-family: 'Quicksand', sans-serif;
     align-self: center;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .hh1 {
@@ -181,7 +179,7 @@ h2 {
     font-size: 28px;
     font-family: 'Quicksand', sans-serif;
     align-self: center;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 h5 {
@@ -189,7 +187,7 @@ h5 {
     font-family: 'Quicksand', sans-serif;
     color:#c4ec96;
     font-size: 20px;
-    background-color: rgb(2, 26, 21);
+    background-color: inherit;
 }
 
 .h4 {
@@ -201,14 +199,14 @@ h5 {
 }
 
 .oranges {
-    background-color: rgb(2, 26, 21);
+    background-color: inherit;
 }
 
 .keep {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    background-color: rgb(2, 26, 21);
+    background-color: initial;
 }
 
 .buttoned {
@@ -233,12 +231,12 @@ h5 {
 
 .img1 {
 padding:2px;
-background-color:#d7701d;
+background-color: initial;
 border-radius:15px;
 }
 
 .bg {
-    background-color: #141D11;
+    background-color: initial;
     color: rgb(235, 155, 50);
     font-size: 20px;
     border-style: solid;
@@ -255,20 +253,23 @@ border-radius:15px;
     width: 100%;
     font-size:15px;
     color:#e8e0be;
+    background-color: inherit;
   }
   
   #customers td, #customers th {
-    border: 2px solid #0d3b1c;
+    border: 1px solid rgb(151, 124, 3);
     padding: 5px;
   }
   
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr {
+    background-color: inherit;
+    }
   
   #customers th {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #0d3b1c;
+    background-color: inherit;
     color: #f5a838;
     
   }

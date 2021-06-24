@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
-* {
-    background-color: #141D11;
-}
-
 .full {
     display: flex;
     flex-direction: column;
-    
+    background-color: #01173e;
+    height: 100vh;
+    background-image: linear-gradient(180deg, #01173e 0%, #4a0135 100%);
 }
 
 .navbar {
@@ -16,43 +14,45 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1px;
-    background-image: linear-gradient(to bottom right, rgb(5, 61, 38) , rgb(6,8,9));
-    border-style: solid;
+    background-color: initial;
+        border-bottom-width:2px;
+    border-bottom-style:solid;
+    border-bottom-color: #011c4a;
+
 }
 
 .logo {
-    height: 70px;
-    width: 180px;
+    height:80px;
+    width: 250px;
     align-self:center;
 }
-
 .five {
     display: flex;
     flex-direction: row;
     align-self: center;
-    background-color: rgb(92, 30, 30);
+    background-color: initial;
     margin-right: 10px;
 }
-
 
 .button {
     font-family: 'Quicksand', sans-serif;
     color: rgba(253, 226, 204, 0.932);
-    font-size: 16px;
-    background-color: #141D11;
+    font-size: 15px;
+    background-color: inherit;
     margin-right: 2px;
     margin-left: 2px;
-    padding: 4px 16px;
+    padding: 3px 16px;
     border-width: 2px;
-    border-color: rgb(151, 124, 3);
+    border-color: #b76f13;
     border-radius: 5%;
+    border-style:solid;
     transition-duration: 0.2s;
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: rgb(119, 98, 2);
-    color: honeydew;
+    background-color: #01082d;
+    color: #f54949;
 }
 
 a {
@@ -63,7 +63,7 @@ a {
 .rest {
     display: flex;
     flex-direction: column;
-
+    background-color: initial;
 }
 
 .less {
@@ -74,25 +74,6 @@ a {
     border-radius:8px;
 }
 
-
-.btns {
-    font-size: 15px;
-        font-family: 'Quicksand', sans-serif;
-    background-color: rgb(30, 122, 18);
-    color: white;
-    border-radius:3px;
-    transition-duration: 0.3s;
-    border-color:#b97c7c;
-    padding:7px;
-    flex-shrink: 0;
-}
-
-.btns:hover {
-    background-color: rgb(184, 37, 0);
-    color: honeydew;
-}
-
-
 .this {
     display: flex;
     flex-direction: row;
@@ -101,9 +82,8 @@ a {
     justify-content:center;
 }
 h2 {
-    font-family: 'Quicksand', sans-serif;
     color:#77c023;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'EB Garamond', serif;
 }
 
@@ -117,20 +97,20 @@ h2 {
   }
   
   #customers td, #customers th {
-    border: 2px solid #0d3b1c;
+    border: 2px solid rgb(151, 124, 3);
     text-align:center;
-    background-color:#061611
+    background-color: initial;
   }
   
   #customers tr {
-    background-color: #f2f2f2;
+    background-color: initial;
   
     }
   
   #customers th {
     padding:10px;
     text-align: center;
-    background-color: #0d3b1c;
+    background-color: initial;
     color: #f5a838;
     
   }

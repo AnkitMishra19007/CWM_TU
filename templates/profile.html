@@ -148,18 +148,21 @@
         </div>
         <div class="right">
             <h2 class="hh1">Past Payments</h2>
-            <table id="customers">
-                <th>Amount</th>
-                <th>Month</th>
-                <th>Paid On</th>
-                <tr>
-                    {% for data in data %}
-                    <td>{{data.bill_amount}}</td>
-                    <td>{{data.bill_month}}</td>
-                    <td>{{data.bill_date}}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <div class="help">
+                <table id="customers">
+                    <th>Amount</th>
+                    <th>Month</th>
+                    <th>Paid On</th>
+                    <tr>
+                        {% for data in data %}
+                        <td>{{data.bill_amount}}</td>
+                        <td>{{data.bill_month}}</td>
+                        <td>{{data.bill_date}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
         </div>
     </div>
 
