@@ -3,7 +3,7 @@
 {% block title %} CWM-TU Dumpyard {% endblock title %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/profiles.css' %}">
 {% endblock style %}
 
 {% block rest %}
@@ -13,7 +13,7 @@
     <div class="left">
         <div class="right">
             <div class="pics">
-                <h2 class="hh1">Admin</h2>
+                <h2 class="hh1">ADMIN</h2>
                 <img src="{% static 'images/orca.png' %}" class="img1">
             </div>
             <div class="here">
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="right">
-            <h2 class="hh1">Registered Users</h2>
+            <h2 class="hh1">REGISTERED USERS</h2>
             <table id="customers">
                 <th>UserID</th>
                 <th>Name</th>
@@ -59,7 +59,7 @@
 
     <div class="left">
         <div class="right">
-            <h2 class="hh1">Payments Received</h2>
+            <h2 class="hh1">RECEIVED PAYMENTS</h2>
             <table id="customers">
                 <th>UserID</th>
                 <th>Name</th>
@@ -83,11 +83,11 @@
 
     {% else %}
     <!--Not a superuser-->
-    <div class="lefts">
+    <div class="rights">
         <div class="right">
             <div class="up">
                 <div class="pics">
-                    <h2>Profile</h2>
+                    <h2>PROFILE</h2>
                     {% if ew.full_name.0 < 'L' %} <img src="{% static 'images/penguin.png' %}" class="img1">
                         {% else %}
                         <img src="{% static 'images/panda.png' %}" class="img1">
@@ -95,34 +95,37 @@
                 </div>
                 <div class="here">
                     <div class="there">Name</div>
-                    <div class="fetch">{{ew.full_name}}</div>
+                    <div class="there">{{ew.full_name}}</div>
                 </div>
                 <div class="here">
                     <div class="there">Email</div>
-                    <div class="fetch">{{ew.email}}</div>
+                    <div class="there">{{ew.email}}</div>
                 </div>
                 <div class="here">
                     <div class="there">Mobile</div>
-                    <div class="fetch">{{ew.mobile}}</div>
+                    <div class="there">{{ew.mobile}}</div>
                 </div>
                 <div class="here">
                     <div class="there">Address</div>
-                    <div class="fetch">{{ew.address}}</div>
+                    <div class="there">{{ew.address}}</div>
                 </div>
             </div>
             <div class="down">
 
                 <form action="{% url 'delete' %}" method="POST">
                     {% csrf_token %}
-                    <button class="buttoned">Delete</button>
+                    <button class="buttoned">Delete Profile</button>
                 </form>
 
-                <a href="{% url 'edit' %}"><button class="buttoned">Edit</button></a>
+                <a href="{% url 'edit' %}"><button class="buttoned">Edit Profile</button></a>
                 <a href="{% url 'logout' %}"><button class="buttoned">Logout</button></a>
             </div>
         </div>
+
+    </div>
+    <div class="left">
         <div class="right">
-            <h2 class="hh">Monthly Bill Payment</h2>
+            <h2 class="hh">MONTHLY BILL PAYMENT</h2>
             <div class="oranges">
                 <form action="" method="POST">
                     {% csrf_token %}
@@ -142,12 +145,9 @@
                     </div>
                 </form>
             </div>
-
-
-
         </div>
         <div class="right">
-            <h2 class="hh1">Past Payments</h2>
+            <h2 class="hh">PAST PAYMENTS</h2>
             <div class="help">
                 <table id="customers">
                     <th>Amount</th>
@@ -162,11 +162,10 @@
                     {% endfor %}
                 </table>
             </div>
-
         </div>
     </div>
-
-    {% endif %}
+</div>
+{% endif %}
 </div>
 
 {% endblock rest %}
