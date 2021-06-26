@@ -94,13 +94,14 @@ def signup(request):
 
 
 def edit(request):
-    print("Called Edit")
     if request.user.is_authenticated:
         if request.method == 'POST':
             pi = MyUser.objects.get(pk=request.user.id)
             fm = EditForm(request.POST, instance=pi)
             if fm.is_valid():
                 fm.save()
+                messages.add_message(
+                    request, messages.INFO, "Your profile has been updated!")
                 return HttpResponseRedirect("/logwaste/profile/")
         else:
             pi = MyUser.objects.get(pk=request.user.id)
