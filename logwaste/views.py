@@ -51,8 +51,9 @@ def ewaste_handle(request, id):
         d.picked = True
         d.picked_date = a
         d.save()
-        messages.add_message(
-            request, messages.SUCCESS, "The selecetd E-waste has been successfully picked and will be sent to process soon!")
+        messages.add_message(request, messages.SUCCESS,
+                             "The selecetd E-waste has been successfully picked and will be sent to process soon!")
+
         return HttpResponseRedirect('/logwaste/ewastes/')
 
 
