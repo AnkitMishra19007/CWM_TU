@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+.full {
+    display: flex;
+    flex-direction: column;
+    background-color: #01173e;
+    height: 120vh;
+    background-image: linear-gradient(180deg, #01173e 0%, #4a0135 100%);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px;
+    background-color: initial;
+        border-bottom-width:2px;
+    border-bottom-style:solid;
+    border-bottom-color: #011c4a;
+
+}
+
+.logo {
+    height:80px;
+    width: 250px;
+    align-self:center;
+}
+.five {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-color: initial;
+    margin-right: 10px;
+}
+
+.button {
+    font-family: 'Quicksand', sans-serif;
+    color: rgba(253, 226, 204, 0.932);
+    font-size: 15px;
+    background-color: inherit;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding: 3px 16px;
+    border-width: 2px;
+    border-color: #b76f13;
+    border-radius: 5%;
+    border-style:solid;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #01082d;
+    color: #f54949;
+}
+
+a {
+    font-size: 19px;
+    color: rgb(211, 170, 34);
+}
+
+.rest {
+    display: flex;
+    flex-direction: column;
+    background-color: initial;
+  
+}
+
+.less {
+  width:9rem;
+    height:100px;
+    border-style:solid;
+    border-color: #7e4500;
+    border-radius:8px;
+}
+
+.this {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    align-items:center;
+    justify-content:center;
+}
+h2 {
+    color:#77c023;
+    font-size: 25px;
+    font-family: 'EB Garamond', serif;
+}
+
+
+#customers {
+    font-family: 'Quicksand', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size:15px;
+    color:#e8e0be;
+      
+  }
+  
+  #customers td, #customers th {
+    border: 2px solid rgb(151, 124, 3);
+    text-align:center;
+    background-color: initial;
+  }
+  
+  #customers tr {
+    background-color: initial;
+  
+    }
+  
+  #customers th {
+    padding:10px;
+    text-align: center;
+    background-color: initial;
+    color: #f5a838;
+    
+  }

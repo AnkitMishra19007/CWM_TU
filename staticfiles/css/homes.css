@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+.full {
+    display: flex;
+    flex-direction: column;
+    background-color: #011c4a;
+    background-image: linear-gradient(180deg, #011c4a 0%, #610146 100%);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px;
+    background-color: initial;
+        border-bottom-width:2px;
+    border-bottom-style:solid;
+    border-bottom-color: #011c4a;
+
+}
+
+.logo {
+    height:80px;
+    width: 250px;
+    align-self:center;
+}
+.five {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-color: initial;
+    margin-right: 10px;
+}
+
+.button {
+    font-family: 'Quicksand', sans-serif;
+    color: rgba(253, 226, 204, 0.932);
+    font-size: 15px;
+    background-color: inherit;
+    margin-right: 2px;
+    margin-left: 2px;
+    padding: 3px 16px;
+    border-width: 2px;
+    border-color: #b76f13;
+    border-radius: 5%;
+    border-style:solid;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #01082d;
+    color: #f54949;
+}
+
+.carousel-caption {
+    background-color: #1d0029;
+}
+
+.imgss {
+    width: 100%;
+    height: 90vh;
+    margin-right: 5%;
+}
+
+.container {
+    position: absolute;
+    font-family: 'Quicksand', sans-serif;
+
+    padding-bottom: 50px;
+}
+
+h5 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    color: tomato;
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+a {
+    font-size: 19px;
+    color: rgb(240, 145, 128);
+}
