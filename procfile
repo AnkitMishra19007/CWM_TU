@@ -1,1 +1,1 @@
-web: gunicorn CWM_TU.wsgi --log-file -
+web: gunicorn CWM_TU.wsgi
